@@ -1,0 +1,176 @@
+:root {
+  --background-white-color: white;
+  --background-grey-color: #f6f6f6;
+  --primary-color: #10cab7;
+  --surface-color: #f6f6f6;
+  --text-primary: #465b67;
+  --text-secondary: #818181;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Header */
+
+.header {
+  background-color: var(--background-white-color);
+  padding: 20px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px auto;
+  padding: 0px 12px;
+}
+.header .logo {
+  width: 64px;
+}
+.header .links {
+  position: relative;
+}
+
+.header .links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--surface-color);
+  position: absolute;
+  right: 0;
+  min-width: 200px;
+  top: calc(100% + 8px);
+  display: none;
+}
+
+.header .links ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent var(--surface-color) transparent;
+  position: absolute;
+  right: 5px;
+  top: -20px;
+  z-index: 1;
+}
+.header .links ul li:not(:last-child) {
+  border-bottom: solid #ddd 1px;
+}
+
+.header .links ul a {
+  padding: 8px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  transition: 300ms;
+}
+.header .links ul a:hover {
+  padding-left: 16px;
+  background-color: #a2a0a0;
+}
+
+.header .links i:hover {
+  cursor: pointer;
+}
+.header .links:hover ul {
+  display: block;
+}
+.header img {
+  width: 86px;
+}
+
+/* Landing Section */
+.landing {
+  background-image: url(../images/mountain.jpg);
+  background-size: cover;
+  background-color: var(--surface-color);
+  width: 100%;
+  height: calc(100vh * 0.75);
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+.landing .intro-text {
+  text-align: center;
+  text-transform: capitalize;
+  max-width: 100%;
+}
+.landing .intro-text h1 {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 48px;
+}
+.landing .intro-text p {
+  color: var(--text-primary);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.landing .mountain-image {
+  position: fixed;
+  width: 100%;
+}
+
+/* Features Section */
+.features {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--background-white-color);
+}
+.features .container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.features .feat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+}
+.features .feat i {
+  color: var(--primary-color);
+  font-size: 48px;
+}
+.features .feat h3 {
+  color: var(--text-primary);
+  text-transform: capitalize;
+  font-weight: 800;
+}
+.features .feat p {
+  color: var(--text-secondary);
+}
